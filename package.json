@@ -12,7 +12,7 @@
     "db:seed": "for file in ./seeds/*.js; do node $file; done",
     "db:seed:windows": "for %f in (./seeds/*) do node ./seeds/%f",
     "db:createMigration": "node ./lib/createMigrations.js",
-    "lint": "eslint --ignore-path .gitignore .",
+    "lint": "./node_modules/.bin/eslint . ",
     "report": "nyc report --reporter=lcov",
     "start": "node ./bin/www",
     "test": "mocha --recursive && (yarn lint || npm lint)"
@@ -25,14 +25,15 @@
     "express": "~4.15.2",
     "jsonwebtoken": "^8.0.1",
     "morgan": "~1.8.1",
+    "nodemon": "1.12.1",
     "pg": "^7.3.0",
-    "postgrator": "^2.10.2"
+    "postgrator": "^3.0"
   },
   "devDependencies": {
     "dotenv": "^4.0.0",
     "eslint": "^4.19.1",
-    "eslint-config-airbnb-base": "^12.1.0",
-    "eslint-plugin-import": "^2.9.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
     "expect": "^21.1.0",
     "mocha": "^3.5.3",
     "nyc": "^11.2.1",

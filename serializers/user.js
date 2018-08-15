@@ -6,6 +6,8 @@ module.exports = user => {
     email: user.email,
     birthYear: user.birthYear,
     student: user.student,
+    roles: ["admin"],
+    imageURL: "/assets/images/users/syam.jpg",
   };
   return serialized;
 };

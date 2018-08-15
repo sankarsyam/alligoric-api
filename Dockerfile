@@ -6,7 +6,7 @@ FROM node:8.9.4-alpine
 ENV APP_NAME alligoric-api
 
 # Create app directory
-WORKDIR /usr/src/app
+WORKDIR /usr/src/$APP_NAME
 
 # Install app dependencies
 # A wildcard is used to ensure both package.json AND package-lock.json are copied

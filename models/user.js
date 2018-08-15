@@ -10,23 +10,6 @@ exports.all = async () => {
   return users;
 };
 
-exports.authenticate = async credentials => {
-  const user = (await query('SELECT * FROM "users" WHERE "email" = $1', [
-    credentials.email,
-  ])).rows[0];
-
-  const valid = user
-    ? await bcrypt.compare(credentials.password, user.passwordDigest)
-    : false;
-
-  if (valid) {
-    const serializedUser = await userSerializer(user);
-    const token = jwt.sign({ currentUserId: user.id }, process.env.JWT_SECRET);
-    return { jwt: token, user: serializedUser };
-  }
-  return { errors: ['Email or Password is incorrect'] };
-};
-
 exports.create = async properties => {
   const errors = await validate(properties);
   if (errors) {

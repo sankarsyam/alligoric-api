@@ -15,9 +15,17 @@ clearDB().then(async () => {
     student: false,
     password: 'password',
   });
-
-  /* eslint-disable no-console */
-  console.log(`Created user ${beyonce.firstName} ${beyonce.lastName}`);
-  /* eslint-enable no-console */
+ /* eslint-disable no-console */
+ console.log(`Created user ${beyonce.firstName} ${beyonce.lastName}`);
+  const syam = await User.create({
+    firstName: 'Syam',
+    lastName: 'Sankar',
+    email: 'syam@example.com',
+    birthYear: 1986,
+    student: false,
+    password: 'password',
+  });
+ /* eslint-disable no-console */
+ console.log(`Created user ${syam.firstName} ${syam.lastName}`);
   await process.exit();
 });

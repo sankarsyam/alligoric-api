@@ -1,0 +1,6 @@
+# Ignore migrations
+
+migrations/*
+models/*
+node_modules/*
+seeds/*
