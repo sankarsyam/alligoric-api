@@ -11,7 +11,7 @@ const service = require('../services/login');
 exports.create = async (req, res,next) => {
   try {
     const user= await service.authenticateUser(req.body);
-    res.json({user});
+    res.json(user);
   } catch (error) {
     next(error);
   }
